@@ -33,26 +33,23 @@ const LostAndFound = () => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    try {
-      setLoading(true);
+  try {
+    const response = await axios.post(
+      "http://localhost:8080/api/item",
+      formData
+    );
 
-      await axios.post(
-        "http://localhost:8080/api/item",
-        formData
-      );
-
-      alert("Report Submitted Successfully");
-
-      navigate("/");
-    } catch (error) {
-      console.log(error);
-      alert("Failed to submit report");
-    } finally {
-      setLoading(false);
-    }
-  };
+    console.log("SUCCESS:", response.data);
+    alert("Saved Successfully");
+    navigate("/");
+  } catch (error) {
+    console.log("ERROR:", error);
+    console.log("ERROR DATA:", error.response?.data);
+    alert("Failed");
+  }
+};
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-100 to-gray-200 py-10 px-4">
