@@ -1,0 +1,57 @@
+/* index.css */
+
+@import "tailwindcss";
+
+/* Full page reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Smooth font rendering */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f3f4f6;   /* light gray */
+  color: #111827;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Remove default link styles */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Buttons cursor */
+button {
+  cursor: pointer;
+}
+
+/* Inputs / textarea cleaner look */
+input,
+textarea {
+  outline: none;
+}
+
+/* Optional scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #e5e7eb;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #9ca3af;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6b7280;
+}
